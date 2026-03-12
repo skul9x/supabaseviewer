@@ -1,0 +1,251 @@
+:root {
+  --bg-color: #0d0d0d;
+  --card-bg: #1a1a1a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --accent-gold: #d4af37;
+  --accent-gold-hover: #f1c40f;
+  --border-color: #333333;
+  --error-color: #ff4d4d;
+  --success-color: #2ecc71;
+  
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 1rem;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  color: var(--accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+  transition: transform 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.card:hover {
+  border-color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+.card-title {
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+}
+
+.card-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.info-item {
+  color: var(--text-secondary);
+}
+
+.info-item b {
+  color: var(--text-primary);
+}
+
+/* Utilities */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--border-color);
+  border-top-color: var(--accent-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.search-container {
+  margin-bottom: 1.5rem;
+}
+
+.search-input {
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-gold);
+}
+
+/* Detail View */
+.detail-view {
+  animation: fadeIn 0.3s ease;
+  padding-bottom: 2rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--accent-gold);
+  color: var(--accent-gold);
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-btn:hover {
+  background: rgba(212, 175, 55, 0.1);
+  transform: translateX(-4px);
+}
+
+.detail-section {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.detail-section h2 {
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.detail-section h2::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 1.2rem;
+  background: var(--accent-gold);
+  border-radius: 2px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.info-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.info-value {
+  display: block;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+pre {
+  background: #000;
+  padding: 1rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  font-size: 0.8rem;
+  color: #00ff00;
+  border: 1px solid #1a3a1a;
+  max-height: 400px;
+}
+
+@media (max-width: 600px) {
+  .info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
