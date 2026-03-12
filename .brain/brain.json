@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "schema_version": "1.1.0",
+    "awf_version": "4.0.2"
+  },
+  "project": {
+    "name": "Supabase Viewer",
+    "type": "Web Application (Vite/TypeScript)",
+    "status": "In Development / v1.0 Released",
+    "repository": "https://github.com/skul9x/supabaseviewer.git"
+  },
+  "tech_stack": {
+    "frontend": {
+      "framework": "Vite 7.3.1",
+      "language": "TypeScript 5.x",
+      "styling": "Vanilla CSS (Premium Dark Mode)",
+      "ui_style": "Dark Theme / Gold Accents / Mobile-first"
+    },
+    "database": {
+      "provider": "Supabase",
+      "tables": [
+        {
+          "name": "laso_sync",
+          "purpose": "Stored astrological chart sync data from TuViWeb app"
+        }
+      ]
+    }
+  },
+  "features": [
+    "List view for laso_sync records",
+    "Search by name or phone number",
+    "Detail view for full record data",
+    "Formatted JSON display for LasoData",
+    "Mobile-first responsive design",
+    "Quick connectivity test script"
+  ],
+  "api_endpoints": [
+    {
+      "path": "supabase:laso_sync",
+      "explained": "Direct table access via Supabase JS Client"
+    }
+  ],
+  "knowledge_items": {
+    "patterns": [
+      "Hash-based routing for simple SPA navigation",
+      "Component-based rendering in Vanilla TS"
+    ],
+    "gotchas": [
+      "TypeScript enum syntax restriction (erasableSyntaxOnly: true) - fixed using 'as const'",
+      "Supabase anon key usage for public SELECT read access"
+    ]
+  }
+}
